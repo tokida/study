@@ -183,43 +183,6 @@ git commit -m "delete README.md
 * その後 status を確認すると `deleted` フラグが表示されています
 * OS上の操作で削除した場合にも deleted フラグが表示されます。
 
-
-## ファイルの名前の変更
-
-名前の変更はOS上で変更し、反映を行うことで可能です。
-
-```
-$ mv handson.md git.md
-$ git status
-On branch master
-Your branch is up to date with 'origin/master'.
-
-Changes not staged for commit:
-  (use "git add/rm <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
-
-	deleted:    handson.md
-
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-
-	git.md
-
-no changes added to commit (use "git add" and/or "git commit -a")
-
-$ git add .
-
-$ git status
-On branch master
-Your branch is up to date with 'origin/master'.
-
-Changes to be committed:
-  (use "git reset HEAD <file>..." to unstage)
-
-	renamed:    handson.md -> git.md
-```
-
-
 ## その他の操作
 
 ### 特定のファイルのみを復元する
