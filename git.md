@@ -399,13 +399,49 @@ $ git branch
                                  [HEAD]
 ```
 
+実際のlogコマンドの結果は次のようになります
+
+
+```
+* 4e7de93 - (master) add readme (2 minutes ago) <Tokida Hideaki>
+| * e303caa - (HEAD -> dev) ブランチ部分を追加 (4 minutes ago) <Tokida Hideaki>
+|/  
+* 2955c28 - (origin/master, origin/HEAD) 修正 (32 minutes ago) <Tokida Hideaki>
+* 21ea45c - 修正を追加 (59 minutes ago) <Tokida Hideaki>
+* eded4c5 - delete handson.md (2 days ago) <Tokida Hideaki>
+* f4c94a7 - rename handson.md (2 days ago) <Tokida Hideaki>
+* 47d74c7 - init (2 days ago) <Tokida Hideaki>
+```
+
+* 上記の場合、[2955c28]のコミット位置から `master` と `dev` に異なる変更が加えられていることがわかります。
+* `dev`の変更内容を `master` に反映するためにはマージ処理を行います。
 
 
 
+```
+                      [HEAD]
+                        |
+                     [master]
+                        |
+[a01] <--- [b02] <--- [c03] <--- [d04]
+                                   |
+                                 [dev] 
+```
+
+作業ブランチを再度 `master` に変更すると上記の図のようになります。ここで変更が加わることで以下のようになります。
 
 
-
-
+```
+                                 [HEAD]
+                                   |
+                              [master]
+                                   |
+                            /--- [e05]
+[a01] <--- [b02] <--- [c03] 
+                            \--- [d04]
+                                   |
+                                 [dev] 
+```
 
 
 
