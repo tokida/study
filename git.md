@@ -92,21 +92,21 @@ git log --oneline
 * Visual Studio Code などのツールを利用している場合には拡張機能を利用することでより可視化することができます。
 
 
-## 特定条件
+### 特定条件
 
-### 特定のファイルの特定のログ
+#### 特定のファイルの特定のログ
 
 ```
 git log -L <start>,<end>:<file>
 ```
 
-### 特定のファイル
+#### 特定のファイル
 
 ```
 git blame <file>
 ```
 
-### コミット単位の変更
+#### コミット単位の変更
 
 ```
 git show <blameでのHash値>
@@ -230,15 +230,23 @@ git remote add google https://source.developers.google.com/p/nic-tranning-enable
 設定がされていると以下のように確認ができます
 
 ```
-❯❯❯ git remote -v
+$ git remote -v
 google  https://source.developers.google.com/p/nic-tranning-enablement/r/git-sample (fetch)
 google  https://source.developers.google.com/p/nic-tranning-enablement/r/git-sample (push)
 ```
 
-
 ## リモートリポジトリの取得
 
 git clone , git pull
+
+```
+git pull origin master
+```
+
+* pullコマンドを利用することでgitサーバ側から更新されたファイルを取得することが出来ます。
+* 基本的には日々の作業の前に更新があるかを確認する事が望ましいです。
+* git pull を行うためには作業中のブランチの状態がコミット済みであることが必要です。コミットされてない変更がある場合にはコミットをするように促されます
+
 
 
 ## 変更の反映
@@ -333,5 +341,3 @@ git push -u origin tokida
 
 ### ローカルで誤った変更をコミットしてしまった場合の取り消し
 ### 新しいコードがローカルにマージできなくなってしまった際の方法
-
-
